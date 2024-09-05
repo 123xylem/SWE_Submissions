@@ -5,5 +5,4 @@ class Solution(object):
         :rtype: List[int]
         """
         ans = nums + nums
-        print(nums, ans)
         return  ans
