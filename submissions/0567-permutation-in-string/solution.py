@@ -2,16 +2,19 @@ class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
         if len(s1) > len(s2):
             return False
-        #Get match map by making array of counts for index of letters
+        # Get match maps by making array of counts ON the index of letters
+        # init starting matches by getting count of letter index in s1 == s2
+        # Find matches by using a window len(s1).
+        # The l,r pointers will adjust matches based s1Map == s2Map at the l,r  ORD(index)
+        #  if 26 matches are found then all letters are accounted for and its a match!
+
         s1Map = [0] * 26
         s2Map = [0] * 26
         
-        #init starting matches by getting count of letter index in s1 and 2
         for i in range(len(s1)):
             s1Map[ord(s1[i]) - ord("a")] += 1
             s2Map[ord(s2[i]) - ord("a")] += 1
 
-        # Find matches by comparing s1 and s2. if 26 then all letter counts match and substring is found
         matches = 0
         for i in range(26):
             if s1Map[i] == s2Map[i]:
@@ -43,46 +46,4 @@ class Solution:
 
         return matches == 26
 
-
-
-
-
-
-
-
-
-
-
-        #This method starts window at first match and then loops to see if R finds whole substring
-        #But too inefficient
-        target = len(s1)  
-        count = 0        
-        required = {}
-        
-        for char in s1:
-            required[char] = required.get(char, 0) + 1
-        
-        for l in range(len(s2)):
-            temp_required = required.copy()  
-            count = 0
-            
-            if s2[l] in temp_required and temp_required[s2[l]] > 0:
-                temp_required[s2[l]] -= 1  
-                count += 1  
-                r = l + 1 
-                if count == target:
-                    return True
-                while r < len(s2):
-                    if s2[r] in temp_required and temp_required[s2[r]] > 0:
-                        temp_required[s2[r]] -= 1 
-                        count += 1  
-                        if count == target:
-                            return True
-                    # If !char or is overused, break 
-                    else:
-                        break
-                    r += 1
-                
-        
-        return False
 
