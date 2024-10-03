@@ -1,10 +1,10 @@
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        # Store indicies of largest in window
-        # Store largest one in window popping all smaller
-        # Once R is window length (k) we pop the left most item from window
-        # The remaining nums will only be the largest in the window 
-        # append that to output array and run the loop again. 
+    #     # Store indicies of largest in window
+    #     # Store largest one in window popping all smaller
+    #     # Once R is window length (k) we pop the left most item from window
+    #     # The remaining nums will only be the largest in the window 
+    #     # append that to output array and run the loop again. 
         largest_num = []
         l,r = 0, 0
         temp_arr = []
@@ -25,7 +25,7 @@ class Solution:
         #Brute force:
         #Iterate through array taking max of range each time
 
-        #
+        
         # for r in range(k-1, len(nums)):
         #     print(nums[l], nums[r], nums[l:r+1:1])
         #     largest_num.append(max(nums[l:r+1:1]))
