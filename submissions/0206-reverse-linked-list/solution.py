@@ -12,7 +12,7 @@ class Solution:
         # we iterate left pointer to current node 
         # We iterate value of curr to nxt (the next in list)
         # We return Prev which is now the head pointer and will point to all the other nodes in reverse.
-        prev, curr = None, head;
+        prev, curr = None, head
         while curr:
             nxt = curr.next
             curr.next = prev
