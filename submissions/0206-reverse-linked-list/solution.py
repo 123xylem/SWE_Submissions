@@ -6,7 +6,7 @@
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        # init 2 pointers
+        # init 2 pointers prev and curr
         # copy the currents Next Node into nxt(temp variable) 
         # Then we change currents nextNode to be the leftpointer
         # we iterate left pointer to current node 
