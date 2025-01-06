@@ -1,10 +1,15 @@
+#Track seen nodes in hashmap.
+# if ever we see a node again we return true
+# Else false.
+
+#Memory optimised solution uses slow/fast pointer. IF fast ever = slow twice then theres been a loop
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        index_tracker = {}
+        node_tracker = {}
         while head:
-            if head in index_tracker:
+            if head in node_tracker:
                 return True
             else:
-              index_tracker[head] = head.val
+              node_tracker[head] = head.val
               head = head.next
         return False
