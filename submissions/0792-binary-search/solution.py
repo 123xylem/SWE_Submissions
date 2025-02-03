@@ -7,12 +7,12 @@ class Solution:
         if nums[r] < target:
             return -1
         while l <= r:
-            mid_point = l + r // 2
+            mid_point = (l + r) // 2
             if nums[mid_point] == target:
                 return mid_point
             elif nums[mid_point] < target:
-                l += 1
+                l = mid_point + 1
             else:
-                r -= 1
+                r = mid_point - 1
         return -1
 
