@@ -15,9 +15,9 @@ class Solution:
             count = 0            
             for p in piles:
                 count += -(-p // mid)
-            if count > h:
+            if count > h: #Ran out of time. eat more bananas
                 l = mid + 1
-            else: #Update if loop completes
+            else: #we can eat them in time... lets see how much slower?
                 min_per_hour = min(min_per_hour, mid)
                 r = mid - 1
             
