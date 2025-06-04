@@ -3,7 +3,7 @@ class Solution:
         biggest_pile = max(piles)  
         l, r = 1, biggest_pile
         min_per_hour = biggest_pile 
-        #Binary Search
+
         #Search mid eating speed to see if piles ate fast enough
         # if mid can then see how much slower we can go
         # r = mid - 1 
@@ -15,9 +15,8 @@ class Solution:
             count = 0            
             for p in piles:
                 count += -(-p // mid)
-                if count > h:
-                    l = mid + 1
-                    break
+            if count > h:
+                l = mid + 1
             else: #Update if loop completes
                 min_per_hour = min(min_per_hour, mid)
                 r = mid - 1
