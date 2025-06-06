@@ -1,5 +1,8 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
+        # Binary Search.
+        # This time we Find out which half of list is sorted Asc
+        # If target is not within those bounds we use the other half of the list.
         l, r = 0, len(nums) -1
 
         while l <= r:
